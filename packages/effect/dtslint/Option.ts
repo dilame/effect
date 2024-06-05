@@ -10,6 +10,16 @@ declare const pimitiveNumerOrString: string | number
 declare const predicateNumbersOrStrings: Predicate.Predicate<number | string>
 
 // -------------------------------------------------------------------------------------
+// match
+// -------------------------------------------------------------------------------------
+
+// $ExpectType readonly [1, 2] | readonly [3, 4]
+Option.match(number, {
+  onNone: () => [1, 2],
+  onSome: () => [3, 4]
+})
+
+// -------------------------------------------------------------------------------------
 // liftPredicate
 // -------------------------------------------------------------------------------------
 

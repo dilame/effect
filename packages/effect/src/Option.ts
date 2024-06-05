@@ -193,11 +193,11 @@ export const isSome: <A>(self: Option<A>) => self is Some<A> = option.isSome
  * @since 2.0.0
  */
 export const match: {
-  <B, A, C = B>(options: {
+  <const B, A, const C = B>(options: {
     readonly onNone: LazyArg<B>
     readonly onSome: (a: A) => C
   }): (self: Option<A>) => B | C
-  <A, B, C = B>(self: Option<A>, options: {
+  <A, const B, const C = B>(self: Option<A>, options: {
     readonly onNone: LazyArg<B>
     readonly onSome: (a: A) => C
   }): B | C
